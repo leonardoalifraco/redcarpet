@@ -86,13 +86,13 @@ static const uint8_t smartypants_cb_chars[] = {
 static inline int
 word_boundary(uint8_t c)
 {
-	return c == 0 || isspace(c) || ispunct(c);
+	return c == 0 || isspace(c) || ispunct(c) || c == "。";
 }
 
 static inline int
 fraction_boundary(uint8_t c)
 {
-	return c == 0 || isspace(c) || (c != '/' && ispunct(c));
+	return c == 0 || isspace(c) || (c != '/' && (ispunct(c) || c == "。"));
 }
 
 // If 'text' begins with any kind of single quote (e.g. "'" or "&apos;" etc.),
