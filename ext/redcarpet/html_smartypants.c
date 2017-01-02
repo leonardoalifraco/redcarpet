@@ -384,6 +384,7 @@ smartypants_cb__escape(struct buf *ob, struct smartypants_data *smrt, uint8_t pr
 	case '"':
 	case '\'':
 	case '.':
+	case '。':
 	case '-':
 	case '`':
 		bufputc(ob, text[1]);
